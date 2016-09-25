@@ -1,7 +1,7 @@
 define([], function () {
 
     // 对当前日期的年进行增加或减少
-    Date.prototype.addYear = function (year) {
+    Date.prototype.AddYear = function (year) {
         var curYear = this.getFullYear();
         if (year == null)
             return
@@ -58,7 +58,7 @@ define([], function () {
     }
 
     // 对当前日期的豪秒进行增加或减少
-    Date.prototype.AddSeconds = function (Milliseconds) {
+    Date.prototype.AddMilliseconds = function (Milliseconds) {
         var curMilliseconds = this.getTime();
         this.setTime(curMilliseconds + Milliseconds);
         return this;

@@ -88,7 +88,18 @@ define([], function () {
         var d = new Date(this.Formate("yyyy-MM-dd hh:mm:ss.S"));
         return d;
     }
-    
+
+    //获取当天是周几（中文）
+    Date.prototype.getCnWeek = function (satrtStr) {
+        var week = [];
+        if (satrtStr == "") {
+            week = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+        } else {
+            week = [satrtStr + "日", satrtStr + "一", satrtStr + "二", satrtStr + "三", satrtStr + "四", satrtStr + "五", satrtStr + "六"];
+        }
+        return week[this.getDay()];
+    }
+
     // 对Date的扩展，将 Date 转化为指定格式的String
     // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
     // 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
